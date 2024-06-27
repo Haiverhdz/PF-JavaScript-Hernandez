@@ -84,6 +84,7 @@ header a:hover {
 }
 
 .prog{
+  width: 1100px;
   display: grid;
   grid-template-columns: 600px;
   margin: 30px;
@@ -103,6 +104,11 @@ header a:hover {
   box-shadow: 1px 1px 12px 2px black
 }
 
+.bts-send{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #btn-salir{
   color: red;
   content: icon;

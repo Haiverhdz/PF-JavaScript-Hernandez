@@ -140,7 +140,7 @@ function programa_finanzas(){
 
 form_1.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const edad = document.getElementById('edad');
+    const edad = document.getElementById('age');
  programa_finanzas();
  form_1.reset();
 
