@@ -1,117 +1,148 @@
-const goBtn = document.getElementById("go-btn");
-const initialForm = document.querySelector(".content");
-const taxForm = document.querySelector(".tax-form");
-const taxGoBtn = document.getElementById("tax-go-btn");
-const taxCalcForm = document.querySelector(".tax-calc-form");
-const optionSelect = document.getElementById("tax-option");
+// // saludo('Hola!, para usar este programa debes ser mayor de edad');
 
-goBtn.addEventListener("click", () => {
-  const ageInput = document.getElementById("age");
-  const age = parseInt(ageInput.value);
+// // let nombre = prompt("Por favor ingrese su nombre");
+// // let edad = Number(prompt("Por favor ingrese su edad"));
+// // alert ('Bienveido '+ nombre +',disfruta nuestro programa.')
 
-  if (isNaN(age) || age < 18) {
-    alert("You must be at least 18 years old to proceed.");
-    return;
-  }
+// // while (edad < 18) {
+// //     alert("No tienes edad suficiente para usar este programa");
+// //     edad = Number(prompt("Por favor ingrese su edad nuevamente"));
+// // }
+// // function ingresarSaldo(){
+// // let option;
+// // let saldo = 0;
 
-  initialForm.style.display = "none";
 
-  taxForm.style.display = "block";
-});
+// // while (option != 0) {
+// //     option = prompt("A continuacion veras las opciones de nuestro programa \n 1.Ingresar dinero recibido \n 2.Ingresar dinero gastado \n 3.ver saldo \n 4.Ver empleados \n 5.Calcular iva \n 0.Salir");
+// //     if (option==1){
+// //         let montoRecibido= Number(prompt("Cuanto deseas ingresar?"));
+// //         alert("Has ingresado " + montoRecibido);
+// //         saldo= montoRecibido + saldo;
+// //     }else if(option == 2){
+// //         let montoGastado= Number(prompt("Ingresa dinero gastado:"));
+// //         alert("Has gastado: " + montoGastado)
+// //         saldo= saldo - montoGastado;
+// //     }else if (option == 3){
+// //         alert ("Tu saldo actual es de: " + saldo);
+// //     }else if (option == 4){
+// //         let empleados = ['DavidValencia', 'LuisaChacon'];
+// //         empleados[2]=('Luna Restrepo');
+// //         function verEmpleados (){
+// //             for (let i=0; i < empleados.length;i++)
+// //                 alert (i+'. '+empleados[i])
+// //         } return verEmpleados(); 
+// //     }
+// //     else if (option == 5){
+// //     let valores = [];
+// //     const montoIva = parseFloat(prompt('Ingrese el valor para calcular el IVA'));
+// //     if (!isNaN(montoIva) && montoIva !== 0) {
+// //             valores.push(montoIva);
+// //         }
+// //         calcularIva();
+// //         console.log(valores);
 
-taxGoBtn.addEventListener("click", () => {
-  taxForm.style.display = "none";
+// //         function calcularIva() {
+// //             valores.forEach((monto) => alert((monto) * 0.19))};
 
-  taxCalcForm.style.display = "block";
-});
 
-optionSelect.addEventListener("change", () => {
-  const selectedOption = optionSelect.value;
-  const taxForm = document.querySelector(".tax-form");
-  const taxCalcForm = document.querySelector(".tax-calc-form");
-  const salaryCalcForm = document.querySelector(".salary-calc-form");
+// //     }else if(option==0){
+// //         alert("Gracias por usar nuestros servicios")
+// //     }
+// // }
+// // }
+// // ingresarSaldo();
 
-  if (selectedOption === "calculate-taxes") {
-    taxCalcForm.style.display = "block";
-    taxForm.style.display = "none";
-  } else if (selectedOption === "calculate-salary") {
-    salaryCalcForm.style.display = "block";
-    taxForm.style.display = "none";
-  }
-});
 
-const calcTaxBtn = document.getElementById("calc-tax-btn");
-const incomeInput = document.getElementById("income");
-const taxRateInput = document.getElementById("tax-rate");
-const deductionsInput = document.getElementById("deductions");
-const taxAmountElement = document.getElementById("tax-amount");
+// function saludo(mensaje){
+//     alert(mensaje)
+// };
 
-calcTaxBtn.addEventListener("click", () => {
-  const income = parseFloat(incomeInput.value);
-  const taxRate = parseFloat(taxRateInput.value) / 100;
-  const deductions = parseFloat(deductionsInput.value);
+// // class empleado{
+// //     constructor(id, nombre, apellido, cargo, salario, direccion, edad){
+// //     this.id= id;
+// //     this.nombre= nombre;
+// //     this.apellido= apellido;
+// //     this.cargo= cargo;
+// //     this.salario= salario;
+// //     this.direccion= direccion;
+// //     this.edad= edad;
+// //     }
+// // }
 
-  if (isNaN(income) || isNaN(taxRate) || isNaN(deductions)) {
-    alert("Please fill in all fields with valid numbers");
-    return;
-  }
 
-  if (income <= 0 || taxRate <= 0 || deductions < 0) {
-    alert("Please enter valid values for income, tax rate, and deductions");
-    return;
-  }
+// // console.log(DavidValencia.cargo);
+// // console.log(empleados[0]);
+// // console.log(typeof DavidValencia);
 
-  const taxableIncome = income - deductions;
-  const taxAmount = taxableIncome * taxRate;
 
-  taxAmountElement.textContent = `Tax Amount: $${taxAmount.toFixed(2)}`;
-});
 
-const salaryCalcForm = document.querySelector(".salary-calc-form");
-const calcSalaryBtn = document.getElementById("calc-salary-btn");
-const basicSalaryInput = document.getElementById("basic-salary");
-const allowancesInput = document.getElementById("allowances");
-const debtsInput = document.getElementById("debts");
-const otherDeductionsInput = document.getElementById("other-deductions");
-const totalSalaryElement = document.getElementById("total-salary");
+// const party = document.getElementById('fiesta');
+// const button = document.getElementById('btn');
 
-calcSalaryBtn.addEventListener("click", () => {
-  const basicSalary = parseFloat(basicSalaryInput.value);
-  const allowances = parseFloat(allowancesInput.value);
-  const debts = parseFloat(debtsInput.value);
-  const otherDeductions = parseFloat(otherDeductionsInput.value);
+// button.addEventListener('click', ()=> {
+//     let invitado = document.createElement('p');
+//     invitado.innerText= 'Luisa';
 
-  if (
-    isNaN(basicSalary) ||
-    isNaN(allowances) ||
-    isNaN(debts) ||
-    isNaN(otherDeductions)
-  ) {
-    alert("Por favor ingresa un dato valido");
-    return;
-  }
+//     party.appendChild(invitado);
 
-  const totalSalary = basicSalary + allowances - debts - otherDeductions;
-  totalSalaryElement.textContent = `Total Salary: $${totalSalary.toFixed(2)}`;
-});
+// })
 
-const backBtn = document.getElementById("back-btn");
-const backBtnSalary = document.getElementById("back-btn-salary");
-const backBtnTaxOption = document.getElementById("back-btn-tax-option");
+// const dance = document.getElementById('bailar');
 
-backBtn.addEventListener("click", () => {
-  taxCalcForm.style.display = "none";
-  taxForm.style.display = "block";
-});
+// dance.addEventListener('click', ()=>{
+//     const items = document.querySelectorAll('p');
+//     items.forEach((item)=>{
+//         item.style.background = 'red';
+//         item.style.color = 'white'
+//     })
+//     }
+// )
 
-backBtnSalary.addEventListener("click", () => {
-  salaryCalcForm.style.display = "none";
-  taxForm.style.display = "block";
-});
+const form_1 = document.querySelector('#form-1');
+const fnz = document.querySelector('#fnz');
 
-backBtnTaxOption.addEventListener("click", () => {
-  taxForm.style.display = "none";
-  initialForm.style.display = "block";
-});
 
+
+function programa_finanzas(){
+    const create_section= document.createElement('section');
+    create_section.className= 'boxs';
+    create_section.id = `task`;
+    create_section.innerHTML= `
+    <section class="prog">
+        <h2>A continuacion veras las opciones de nuestro programa</h2>
+            <form action="" id="form-2">
+                <div class="inputs">
+                    <label for="ingresar_monto">Ingresar dinero recibido</label>
+                    <input type="text" id="ingresar_monto">
+                </div class="inputs">
+                <div class="inputs">
+                    <label for="monto_gastado">Ingresas monto gastado</label>
+                    <input type="text" id="monto_gastado">
+                </div>
+                <div class="inputs">
+                    <label for="ver_saldo">Ver saldo</label>
+                    <input type="text" id="ver_saldo">
+                </div>
+                <div class="inputs">
+                    <label for="calcular_iva">Calcular Iva</label>
+                    <input type="text" id="calcular_iva">
+                </div>
+                <div>
+                    <button id="btn-salir">Enviar y salir</button>
+                </div>
+            </form>
+    </section>
+    `
+    fnz.appendChild(create_section);
+}
+
+
+form_1.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const edad = document.getElementById('edad');
+ programa_finanzas();
+ form_1.reset();
+
+} )
 
