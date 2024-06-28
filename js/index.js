@@ -1,148 +1,88 @@
-// // saludo('Hola!, para usar este programa debes ser mayor de edad');
+const form1= document.querySelector('#form1');
+const form2= document.querySelector('#form2');
+const form3= document.querySelector('#form3');
+const stn1 = document.querySelector('#section1');
+const stn2 = document.querySelector('#section2');
+const stn3 = document.querySelector('#section3');
+const stn4 = document.querySelector('#section4');
+const btnIva = document.querySelector('#calcIvabtn');
+const opt = document.querySelector('#ivaOrFin');
+const btnTaxSend = document.querySelector('#btn_tax_send');
+const btn_back_tax = document.getElementById('btn_back_tax');
+const calcSaldobtn = document.getElementById('calcSaldobtn');
+const btn_iva = document.getElementById('calcIvabtn');
+let saldo_historico = [];
+const btn_1 = document.getElementById('btn1');
 
-// // let nombre = prompt("Por favor ingrese su nombre");
-// // let edad = Number(prompt("Por favor ingrese su edad"));
-// // alert ('Bienveido '+ nombre +',disfruta nuestro programa.')
+function esconderSections (){
+    stn2.style.display = 'none';
+    stn3.style.display = 'none';
+    stn4.style.display = 'none';
+};
+esconderSections();
 
-// // while (edad < 18) {
-// //     alert("No tienes edad suficiente para usar este programa");
-// //     edad = Number(prompt("Por favor ingrese su edad nuevamente"));
-// // }
-// // function ingresarSaldo(){
-// // let option;
-// // let saldo = 0;
+btn_1.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const ageInput = document.getElementById("age");
+    const age = parseInt(ageInput.value);
+    if (isNaN(age) || age < 18) {
+        alert("No tienes edad suficiente para usar este programa.");
+        return;
+      }
+      stn1.style.display = 'none';
+      stn2.style.display = 'block';
 
+});
 
-// // while (option != 0) {
-// //     option = prompt("A continuacion veras las opciones de nuestro programa \n 1.Ingresar dinero recibido \n 2.Ingresar dinero gastado \n 3.ver saldo \n 4.Ver empleados \n 5.Calcular iva \n 0.Salir");
-// //     if (option==1){
-// //         let montoRecibido= Number(prompt("Cuanto deseas ingresar?"));
-// //         alert("Has ingresado " + montoRecibido);
-// //         saldo= montoRecibido + saldo;
-// //     }else if(option == 2){
-// //         let montoGastado= Number(prompt("Ingresa dinero gastado:"));
-// //         alert("Has gastado: " + montoGastado)
-// //         saldo= saldo - montoGastado;
-// //     }else if (option == 3){
-// //         alert ("Tu saldo actual es de: " + saldo);
-// //     }else if (option == 4){
-// //         let empleados = ['DavidValencia', 'LuisaChacon'];
-// //         empleados[2]=('Luna Restrepo');
-// //         function verEmpleados (){
-// //             for (let i=0; i < empleados.length;i++)
-// //                 alert (i+'. '+empleados[i])
-// //         } return verEmpleados(); 
-// //     }
-// //     else if (option == 5){
-// //     let valores = [];
-// //     const montoIva = parseFloat(prompt('Ingrese el valor para calcular el IVA'));
-// //     if (!isNaN(montoIva) && montoIva !== 0) {
-// //             valores.push(montoIva);
-// //         }
-// //         calcularIva();
-// //         console.log(valores);
+btnTaxSend.addEventListener('change', ()=>{
+    const opt1 = opt.value;
+    if(opt1==='Calcular salario'){
+        stn1.style.display = 'none';
+        stn2.style.display = 'none';
+        stn4.style.display = 'none';
+        stn3.style.display = 'block';
+    }else if(opt1==='Calcular Iva'){
+        stn1.style.display = 'none';
+        stn2.style.display = 'none';
+        stn3.style.display = 'none';
+        stn4.style.display = 'block';
+    }
+})
 
-// //         function calcularIva() {
-// //             valores.forEach((monto) => alert((monto) * 0.19))};
+btn_back_tax.addEventListener('click', ()=>{
+    stn2.style.display = 'none';
+    stn3.style.display = 'none';
+    stn4.style.display = 'none';
+    stn1.style.display = 'block';
+})
 
-
-// //     }else if(option==0){
-// //         alert("Gracias por usar nuestros servicios")
-// //     }
-// // }
-// // }
-// // ingresarSaldo();
-
-
-// function saludo(mensaje){
-//     alert(mensaje)
-// };
-
-// // class empleado{
-// //     constructor(id, nombre, apellido, cargo, salario, direccion, edad){
-// //     this.id= id;
-// //     this.nombre= nombre;
-// //     this.apellido= apellido;
-// //     this.cargo= cargo;
-// //     this.salario= salario;
-// //     this.direccion= direccion;
-// //     this.edad= edad;
-// //     }
-// // }
-
-
-// // console.log(DavidValencia.cargo);
-// // console.log(empleados[0]);
-// // console.log(typeof DavidValencia);
-
-
-
-// const party = document.getElementById('fiesta');
-// const button = document.getElementById('btn');
-
-// button.addEventListener('click', ()=> {
-//     let invitado = document.createElement('p');
-//     invitado.innerText= 'Luisa';
-
-//     party.appendChild(invitado);
-
-// })
-
-// const dance = document.getElementById('bailar');
-
-// dance.addEventListener('click', ()=>{
-//     const items = document.querySelectorAll('p');
-//     items.forEach((item)=>{
-//         item.style.background = 'red';
-//         item.style.color = 'white'
-//     })
-//     }
-// )
-
-const form_1 = document.querySelector('#form-1');
-const fnz = document.querySelector('#fnz');
-
-
-
-function programa_finanzas(){
-    const create_section= document.createElement('section');
-    create_section.className= 'boxs';
-    create_section.id = `task`;
-    create_section.innerHTML= `
-    <section class="prog">
-        <h2>A continuacion veras las opciones de nuestro programa</h2>
-            <form action="" id="form-2">
-                <div class="inputs">
-                    <label for="ingresar_monto">Ingresar dinero recibido</label>
-                    <input type="text" id="ingresar_monto">
-                </div class="inputs">
-                <div class="inputs">
-                    <label for="monto_gastado">Ingresas monto gastado</label>
-                    <input type="text" id="monto_gastado">
-                </div>
-                <div class="inputs">
-                    <label for="ver_saldo">Ver saldo</label>
-                    <input type="text" id="ver_saldo">
-                </div>
-                <div class="inputs">
-                    <label for="calcular_iva">Calcular Iva</label>
-                    <input type="text" id="calcular_iva">
-                </div>
-                <div>
-                    <button id="btn-salir">Enviar y salir</button>
-                </div>
-            </form>
-    </section>
-    `
-    fnz.appendChild(create_section);
+function calculadorSaldo (){
+    let ingreso = document.querySelector('#ingresar_monto').value;
+    let egreso = document.getElementById('monto_gastado').value;
+    let saldo = document.getElementById('saldo');
+    saldo.innerHTML= Number(saldo.textContent)+(Number(ingreso)-Number(egreso)) ;
+    let now = new Date();
+    let date = now.toLocaleDateString('es-ES');
+    saldo_historico.push({date,saldo:Number(saldo.textContent)});
+    window.localStorage.setItem('saldo_historico',JSON.stringify(saldo_historico));  
 }
 
-
-form_1.addEventListener('submit', (e)=>{
+calcSaldobtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    const edad = document.getElementById('age');
- programa_finanzas();
- form_1.reset();
+    calculadorSaldo();
+    document.getElementById('monto_gastado').value='';
+    document.getElementById('ingresar_monto').value='';
+    
+})
 
-} )
+btn_iva.addEventListener('click', (e)=>{
+    e.preventDefault();
+    let saldo = document.getElementById('ingresar_saldo').value;
+    let iva =document.getElementById('ingresar_iva').value;
+    let iva_calculado = document.getElementById('iva_calculado');
+    iva_calculado.innerHTML= (Number(saldo)*Number(iva))/100 ;
+    document.getElementById('ingresar_saldo').value='';
+    document.getElementById('ingresar_iva').value='';
+})
+
 
