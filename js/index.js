@@ -13,6 +13,7 @@ const calcSaldobtn = document.getElementById("calcSaldobtn");
 const btn_iva = document.getElementById("calcIvabtn");
 let saldo_historico = [];
 const btn_1 = document.getElementById("btn1");
+const back_btn = document.getElementById('back-btn');
 
 function esconderSections() {
   stn2.style.display = "none";
@@ -84,3 +85,8 @@ btnTaxSend.addEventListener("click", (e) => {
   }
 });
 
+back_btn.addEventListener('click', ()=>{
+    stn3.style.display='none';
+    stn1.style.display='none';
+    stn2.style.display='block';
+})

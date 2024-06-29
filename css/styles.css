@@ -4,10 +4,10 @@
     box-sizing:border-box;
 }
 
-/* body{
-    background-image: url(/assets/images/stock-vector-widescreen-abstract-financial-chart-with-uptrend-line-graph-and-candlestick-on-black-and-white-1684808446.jpeg);
+body{
+    background-image: url(/assets/images/Captura\ de\ Pantalla\ 2024-06-29\ a\ la\(s\)\ 12.09.03\ p.m..png);
     background-size: cover;
-} */
+}
 
 
 header {
@@ -65,6 +65,7 @@ header a:hover {
   padding: 30px;
   text-align: center;
   justify-content: center;
+  align-items: center;
   
 }
 
@@ -98,14 +99,24 @@ header a:hover {
   
 }
 
+.btn-send{
+  color: blue;
+  padding: 3px;
+  border-radius: 1px;
+}
+
 .bts-send{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#btn-salir{
+
+.btn-salir{
   color: red;
   content: icon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 container-form{
