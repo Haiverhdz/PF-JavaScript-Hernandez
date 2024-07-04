@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <a href="#">Inicio</a>
+        <a href="./index.html">Inicio</a>
         <a href="#">Productos</a>
         <a href="#">Servicios</a>
         <a href="#">Acerca de</a>
@@ -17,10 +17,10 @@
     <main class="mains">
         <div>
             <h2 class="titulosSecundarios"><strong>Calcula tus finanzas</strong></h2>
-                <p class="parrafosCentrados">Este programa te ayudara a calcular tus ingresos y gastos diarios, Este programa fue diseñado para personas que son independietes o tienen algun tipo de negocio.</p>
+            <p class="parrafosCentrados">Este programa te ayudara a calcular tus ingresos y gastos diarios, Este programa fue diseñado para personas que son independietes o tienen algun tipo de negocio.</p>
         </div>
         <div>
-        <h2 class="titulosSecundarios"><strong>¿Cómo usarlo?</strong></h2>
+            <h2 class="titulosSecundarios"><strong>¿Cómo usarlo?</strong></h2>
             <p class="parrafosCentrados">Solo debes ingresar en <strong>Ingresar dinero recibido</strong> la venta que hayas hecho, en la opcion <strong>Ingresar dinero gastado</strong> ingresas el dinero que hayas gastado para tu mismo negocio como puede ser en el ejemplo de un taxista como la gasolina y al finalizar el dia puedes ver el balance del dinero que te quedo neto en la opcion <strong>ver saldo.</strong>
             Espero que el programa sea de gran ayuda para las personas que reciben y gastan dinero al dia a dia pero no saben el valor exacto de sus ganancias.</p>
         </div>
@@ -43,73 +43,78 @@
         </section> 
 
         <section class="sections" id='section2'>
-            <div class="boxs">
-            <div class="box">
-                <label for="ivaOrFin">Seleccione la operación a realizar:</label>
-                <select id="ivaOrFin">
-                    <option value="">Seleccione una opción:</option>
-                    <option value="calculate_salary">Calcular salario</option>
-                    <option value="calcule_taxes">Calcular Iva</option>
-                </select>
-            </div>
-            <div class="box">
-                 <button id="btn_tax_send" class="btn-send">Enviar</button>
-                    <button id="btn_back_tax" class="btn-salir">Atrás</button>
+            <div class="sections">
+                <div class="boxs">
+                    <div class="box">
+                        <label for="ivaOrFin">Seleccione la operación a realizar:</label>
+                        <select id="ivaOrFin">
+                            <option value="">Seleccione una opción:</option>
+                            <option value="calculate_salary">Calcular salario</option>
+                            <option value="calcule_taxes">Calcular Iva</option>
+                        </select>
+                    </div>
+                    <div class="box">
+                        <button id="btn_tax_send" class="btn-send">Enviar</button>
+                        <button id="btn_back_tax" class="btn-salir">Atrás</button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="sections" id="section3">
-            <main class="boxs">
-                <h2>Calcula tu salario diario</h2>
-                <form id="form2" style="display: flex;flex-direction: column;gap: 8px;width: 100%;">
-                    <div>
-                        <label for="ingresar_monto">Ingresa valor recibido:</label>
-                        <input type="number" id="ingresar_monto" />
-                    </div>
-                    <div class="input-fields">
-                        <label for="monto_gastado">ingresa monto gastado:</label>
-                        <input type="number" id="monto_gastado" />
-                    </div>
-                    <div class="boxP">
-                        <button style="width: 200px;" id="calcSaldobtn">Calcular saldo:</button>
-                        <div style="width: 50%;display: flex; flex-direction: row;align-items: center;">
-                            <p style="margin: 30px;">Saldo:</p>
-                            <p id="saldo" style="margin: 30px;">0</p>
+            <div class="sections">
+                <main class="boxs">
+                    <h2>Calcula tu salario diario</h2>
+                    <form id="form2" style="display: flex;flex-direction: column;gap: 8px;width: 100%;">
+                        <div>
+                            <label for="ingresar_monto">Ingresa valor recibido:</label>
+                            <input type="number" id="ingresar_monto" />
                         </div>
-                    </div>
-                    <div style='display:flex; align-items:center; justify-content:center;'>
-                        <button id="back-btn" class="btn-salir" style="width:50px;">Salir</<button>
-                    </div>
-                </form>
-            </main>
+                        <div class="input-fields">
+                            <label for="monto_gastado">ingresa monto gastado:</label>
+                            <input type="number" id="monto_gastado" />
+                        </div>
+                        <div class="boxP">
+                            <button style="width: 200px;" id="calcSaldobtn">Calcular saldo:</button>
+                            <div style="width: 50%;display: flex; flex-direction: row;align-items: center;">
+                                <p style="margin: 30px;">Saldo:</p>
+                                <p id="saldo" style="margin: 30px;">0</p>
+                            </div>
+                        </div>
+                        <div style='display:flex; align-items:center; justify-content:center;'>
+                            <button id="back-btn" class="btn-salir" style="width:50px;">Salir</<button>
+                        </div>
+                    </form>
+                </main>
+            </div>
         </section>
 
          <section class="sections" id="section4">
-            <main class="boxs">
-                <h2>Calcula el iva de tu saldo</h2>
-                <form id="form3" style="display: flex;flex-direction: column;gap: 8px;width: 100%;">
-                    <div>
-                        <label for="ingresar_saldo">Ingresa saldo anonimo</label>
-                        <input type="number" id="ingresar_saldo" />
-                    </div>
-                    <div>
-                        <label for="ingresar_iva">Ingresa el % del iva</label>
-                        <input type="number" id="ingresar_iva">
-                    </div>
-                    <div class="boxP">
-                        <button style="width: 50%;" id="calcIvabtn">Calcular iva de saldo</button>
-                        <div style="width: 50%;display: flex; flex-direction: row;align-items: center;">
-                            <p style="margin: 30px;">Iva calculado:</p>
-                            <p id="iva_calculado" style="margin: 30px;">0</p>
+            <div class="sections">
+                <main class="boxs">
+                    <h2>Calcula el iva de tu saldo</h2>
+                    <form id="form3" style="display: flex;flex-direction: column;gap: 8px;width: 100%;">
+                        <div>
+                            <label for="ingresar_saldo">Ingresa saldo anonimo</label>
+                            <input type="number" id="ingresar_saldo" />
                         </div>
-                    </div>
-                    <div style='display:flex; align-items:center; justify-content:center;'>
-                        <button id="back-btn" class="btn-salir" style="width:50px;">Salir</<button>
-                    </div>
-                    
-                </form>
-            </main>
+                        <div>
+                            <label for="ingresar_iva">Ingresa el % del iva</label>
+                            <input type="number" id="ingresar_iva">
+                        </div>
+                        <div class="boxP">
+                            <button style="width: 50%;" id="calcIvabtn">Calcular iva de saldo</button>
+                            <div style="width: 50%;display: flex; flex-direction: row;align-items: center;">
+                                <p style="margin: 30px;">Iva calculado:</p>
+                                <p id="iva_calculado" style="margin: 30px;">0</p>
+                            </div>
+                        </div>
+                        <div style='display:flex; align-items:center; justify-content:center;'>
+                            <button id="back-btn" class="btn-salir" style="width:50px;">Salir</<button>
+                        </div>
+                    </form>
+                </main>
+            </div>
         </section>
     
     <script src="./js/index.js"></script>
