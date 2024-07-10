@@ -94,3 +94,11 @@ back_btn.addEventListener('click', ()=>{
     stn1.style.display='none';
     stn2.style.display='block';
 })
+
+const tiempo = document.querySelector('#time');
+function crearReloj(){
+  const date = new Date();
+  tiempo.innerHTML= `${date.getHours()} ${date.getMinutes()} ${date.getSeconds()}`
+}
+document.body.appendChild(tiempo);
+setInterval((crearReloj),0);
