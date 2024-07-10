@@ -27,7 +27,11 @@ btn_1.addEventListener("click", (e) => {
   const ageInput = document.getElementById("age");
   const age = parseInt(ageInput.value);
   if (isNaN(age) || age < 18) {
-    alert("No tienes edad suficiente para usar este programa.");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "No tienes edad suficiente para usar este programa!",
+    });
     return;
   }
   stn1.style.display = "none";
@@ -38,7 +42,7 @@ btn_back_tax.addEventListener("click", () => {
   stn2.style.display = "none";
   stn3.style.display = "none";
   stn4.style.display = "none";
-  stn1.style.display = "block";
+  stn1.style.display = "flex";
 });
 
 function calculadorSaldo() {
