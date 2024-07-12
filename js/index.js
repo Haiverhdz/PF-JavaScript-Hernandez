@@ -102,3 +102,20 @@ function crearReloj(){
 }
 document.body.appendChild(tiempo);
 setInterval((crearReloj),0);
+
+const char = document.getElementById('char');
+const btnApi = document.getElementById('btn-api');
+
+btnApi.addEventListener('click',()=>{
+  fetch('https://rickandmortyapi.com/api/location')
+.then((dat)=> dat.json())
+.then((res)=>{
+  const {results} = res;
+  results.forEach(character => {
+    const p = document.createElement('p');
+    p.className= 'apis';
+    p.innerHTML = `${character.name}`;
+    char.appendChild(p);
+  });
+})
+})
